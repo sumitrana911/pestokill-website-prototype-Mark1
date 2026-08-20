@@ -1,185 +1,813 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Pestokill Services — responsive pest control website prototype for Delhi NCR and nearby regions.">
-  <title>Pestokill Services | Pest Control</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pestokill Services India Pvt Ltd | Pest Control in Delhi NCR</title>
+  <meta name="description" content="Pestokill Services India Pvt Ltd provides pest control services for homes, offices, hospitals, restaurants, hotels, societies and other private or public spaces across Delhi NCR, Rajasthan, Haryana and Uttarakhand.">
+  <meta name="theme-color" content="#57c800">
+  <link rel="canonical" href="https://pestokillservices.com/">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <meta property="og:title" content="Pestokill Services India Pvt Ltd">
+  <meta property="og:description" content="Professional pest control solutions for residential and commercial spaces.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pestokillservices.com/">
+  <meta property="og:image" content="assets/cover.jpg">
+
+  <style>
+    :root {
+      --green: #57c800;
+      --green-dark: #3d9e00;
+      --green-soft: #effbdd;
+      --orange: #f99a12;
+      --orange-dark: #e47700;
+      --ink: #171717;
+      --muted: #626262;
+      --line: #e7e7e7;
+      --white: #fff;
+      --bg: #fbfcf8;
+      --shadow: 0 18px 50px rgba(0,0,0,.08);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea, select { font: inherit; }
+
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar {
+      background: #171717;
+      color: #fff;
+      font-size: .88rem;
+    }
+    .topbar-inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .topbar a { color: #fff; opacity: .92; }
+    .topbar a:hover { color: #b9ff71; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,0,0,.07);
+    }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
+    }
+    .brand img { width: 54px; height: 54px; object-fit: contain; }
+    .brand-text { min-width: 0; }
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 900;
+      letter-spacing: .04em;
+      font-size: 1.28rem;
+      line-height: 1;
+    }
+    .brand-sub {
+      margin-top: 5px;
+      font-size: .66rem;
+      letter-spacing: .22em;
+      white-space: nowrap;
+    }
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-weight: 700;
+      font-size: .93rem;
+    }
+    nav a:hover { color: var(--green-dark); }
+    .nav-cta, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .nav-cta {
+      background: var(--green);
+      padding: 11px 18px;
+    }
+    .nav-cta:hover, .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(87,200,0,.22); }
+    .menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(87,200,0,.15), transparent 32%),
+        linear-gradient(135deg, #fff 0%, #f8fff1 55%, #f2fae9 100%);
+      padding: 82px 0 70px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -130px;
+      bottom: -180px;
+      width: 430px;
+      height: 430px;
+      border-radius: 50%;
+      background: rgba(249,154,18,.11);
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 60px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: var(--green-soft);
+      color: #377900;
+      border: 1px solid #d9f3b9;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.6rem, 6vw, 5.15rem);
+      line-height: .98;
+      margin: 20px 0;
+      letter-spacing: -.035em;
+    }
+    h1 span { color: var(--green-dark); }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 650px;
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { padding: 14px 21px; }
+    .btn-primary { background: var(--orange); color: #171717; }
+    .btn-secondary { background: #171717; color: #fff; }
+    .btn-light { background: #fff; border: 1px solid var(--line); }
+
+    .hero-visual {
+      min-height: 450px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+    .hero-card {
+      width: min(100%, 490px);
+      aspect-ratio: 1 / 1;
+      background: #171717;
+      border-radius: 34px;
+      padding: 34px;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 30px 70px rgba(0,0,0,.16);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: var(--green);
+      left: -100px;
+      bottom: -100px;
+      opacity: .95;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: var(--orange);
+      right: -80px;
+      top: -70px;
+      opacity: .9;
+    }
+    .hero-card img {
+      position: relative;
+      z-index: 1;
+      width: 72%;
+      height: 72%;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 20px rgba(0,0,0,.22));
+    }
+
+    .trust-strip { background: #171717; color: #fff; }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .trust-item {
+      padding: 23px 18px;
+      border-right: 1px solid rgba(255,255,255,.12);
+      text-align: center;
+    }
+    .trust-item:last-child { border-right: 0; }
+    .trust-item strong { display: block; font-size: 1.05rem; }
+    .trust-item span { display: block; color: #cfcfcf; font-size: .82rem; margin-top: 3px; }
+
+    section { padding: 88px 0; }
+    .section-head { max-width: 720px; margin-bottom: 42px; }
+    .kicker {
+      color: var(--green-dark);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: .78rem;
+    }
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1.05;
+      margin: 9px 0 13px;
+    }
+    .section-head p { color: var(--muted); margin: 0; }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .service {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 25px;
+      box-shadow: 0 7px 24px rgba(0,0,0,.035);
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .service:hover { transform: translateY(-5px); border-color: #bde98c; }
+    .service-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: grid; place-items: center;
+      background: var(--green-soft);
+      font-size: 1.35rem;
+      margin-bottom: 20px;
+    }
+    .service h3 { margin: 0 0 7px; font-size: 1.06rem; }
+    .service p { color: var(--muted); font-size: .9rem; margin: 0; }
+
+    .dark-section { background: #171717; color: #fff; }
+    .dark-section .section-head p { color: #bdbdbd; }
+    .coverage {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    .coverage-card {
+      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+      min-height: 430px;
+      position: relative;
+    }
+    .coverage-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      min-height: 430px;
+    }
+    .coverage-card .overlay {
+      position: absolute;
+      inset: auto 20px 20px 20px;
+      background: rgba(0,0,0,.82);
+      color: #fff;
+      padding: 18px 20px;
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+    }
+    .coverage-card .overlay strong { display: block; font-size: 1.05rem; }
+    .coverage-card .overlay span { color: #ddd; font-size: .85rem; }
+    .region-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin-top: 26px;
+    }
+    .region {
+      border: 1px solid #373737;
+      background: #202020;
+      border-radius: 16px;
+      padding: 16px 18px;
+      font-weight: 800;
+    }
+    .region::before {
+      content: "✓";
+      color: var(--green);
+      margin-right: 9px;
+    }
+
+    .audiences {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .audience {
+      background: #fff;
+      border-radius: 20px;
+      padding: 26px;
+      border: 1px solid var(--line);
+    }
+    .audience strong { font-size: 1.05rem; }
+    .audience p { color: var(--muted); margin: 7px 0 0; font-size: .9rem; }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      counter-reset: step;
+    }
+    .step {
+      position: relative;
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 27px 23px;
+      border-radius: 20px;
+    }
+    .step-number {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: var(--orange);
+      display: grid; place-items: center;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+    .step h3 { margin: 0 0 6px; }
+    .step p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .cta {
+      padding: 34px;
+      border-radius: 30px;
+      background: linear-gradient(120deg, #57c800, #82dc28);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 25px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .cta h2 { margin: 0 0 6px; font-size: clamp(1.8rem, 3vw, 2.7rem); }
+    .cta p { margin: 0; color: #174300; }
+    .cta .btn { background: #171717; color: #fff; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 38px;
+      align-items: start;
+    }
+    .contact-card {
+      background: #171717;
+      color: #fff;
+      border-radius: 28px;
+      padding: 30px;
+    }
+    .contact-card p { color: #c9c9c9; }
+    .contact-line {
+      padding: 15px 0;
+      border-bottom: 1px solid #333;
+    }
+    .contact-line:last-child { border-bottom: 0; }
+    .contact-line small { display: block; color: #9d9d9d; margin-bottom: 2px; }
+    .contact-line a { font-weight: 800; }
+    .quote-form {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 30px;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: .84rem; font-weight: 800; }
+    input, select, textarea {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 12px 13px;
+      outline: none;
+      background: #fff;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(87,200,0,.11); }
+    textarea { min-height: 125px; resize: vertical; }
+    .form-note { color: var(--muted); font-size: .8rem; margin-top: 10px; }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 34px 0;
+    }
+    .footer-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    footer small { color: #a7a7a7; }
+    .footer-links { display: flex; gap: 18px; font-size: .9rem; }
+    .footer-links a:hover { color: #a9f65e; }
+
+    @media (max-width: 1000px) {
+      .hero-grid, .coverage, .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 60px; }
+      .hero-visual { min-height: 390px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .process { grid-template-columns: repeat(2, 1fr); }
+      .audiences { grid-template-columns: repeat(2, 1fr); }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .trust-item:nth-child(2) { border-right: 0; }
+      .trust-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.12); }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
+      .topbar-inner { justify-content: center; text-align: center; }
+      .topbar-inner span { display: none; }
+      .nav { min-height: 72px; }
+      nav { display: none; position: absolute; left: 0; right: 0; top: 72px; background: #fff; border-bottom: 1px solid var(--line); padding: 12px 20px 20px; }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+      nav li a { display: block; padding: 11px 0; }
+      .nav-cta { text-align: center; margin-top: 8px; }
+      .menu { display: block; }
+      .brand-name { font-size: 1.05rem; }
+      .brand-sub { font-size: .55rem; }
+      .brand img { width: 46px; height: 46px; }
+      .hero { padding: 52px 0; }
+      h1 { font-size: clamp(2.6rem, 15vw, 4.1rem); }
+      .hero-visual { min-height: 330px; }
+      .hero-card { width: 90%; padding: 24px; border-radius: 25px; }
+      section { padding: 65px 0; }
+      .service-grid, .audiences, .process { grid-template-columns: 1fr; }
+      .region-list { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+      .trust-item { padding: 18px 10px; }
+      .cta { grid-template-columns: 1fr; padding: 27px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .footer-grid { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PestControl",
+    "name": "Pestokill Services India Pvt Ltd",
+    "url": "https://pestokillservices.com/",
+    "email": "pestokillservicesindia@gmail.com",
+    "areaServed": [
+      "Delhi NCR",
+      "Rajasthan",
+      "Haryana",
+      "Uttarakhand"
+    ],
+    "serviceType": [
+      "Cockroach control",
+      "Ant control",
+      "Mosquito control",
+      "Termite control",
+      "Rodent control",
+      "Bed bug control",
+      "Fly control",
+      "Spider control"
+    ]
+  }
+  </script>
 </head>
+
 <body>
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a class="brand" href="#top" aria-label="Pestokill home">
-        <span class="brand-mark">P</span>
-        <span>
-          <strong>PESTOKILL</strong>
-          <small>Services</small>
-        </span>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Residential • Commercial • Public & Private Spaces</span>
+      <a href="mailto:pestokillservicesindia@gmail.com">pestokillservicesindia@gmail.com</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Pestokill Services India home">
+        <img src="assets/logo.svg" alt="Pestokill Services India icon">
+        <div class="brand-text">
+          <div class="brand-name">PESTOKILL</div>
+          <div class="brand-sub">SERVICES INDIA PVT LTD</div>
+        </div>
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
 
-      <nav class="nav" id="mainNav">
-        <a href="#services">Services</a>
-        <a href="#about">Why Pestokill</a>
-        <a href="#areas">Service Areas</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-call" href="tel:+919999999999">Call Now</a>
+      <nav id="nav">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#sectors">Who We Serve</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a class="nav-cta" href="#contact">Get a Quote</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main id="home">
     <section class="hero">
-      <div class="hero-bg"></div>
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">TRUSTED PEST CONTROL</span>
-          <h1>A cleaner space starts with a <span>pest-free</span> space.</h1>
-          <p>Simple, reliable pest control solutions for homes, offices, restaurants, hospitals, societies and commercial spaces.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Get a Free Quote <span>→</span></a>
-            <a class="btn btn-light" href="tel:+919999999999">Call +91 99999 99999</a>
-          </div>
-          <div class="trust-row">
-            <div><b>✓</b><span>Professional service</span></div>
-            <div><b>✓</b><span>Delhi NCR focused</span></div>
-            <div><b>✓</b><span>Residential & commercial</span></div>
+        <div>
+          <span class="eyebrow">Pest Control Solutions</span>
+          <h1>Keep pests out.<br><span>Keep life moving.</span></h1>
+          <p>
+            Pestokill Services India Pvt Ltd provides targeted pest control solutions
+            for homes, offices, hospitals, restaurants, hotels, societies and other
+            public or private spaces across Delhi NCR and selected North Indian regions.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Request a Quote</a>
+            <a class="btn btn-secondary" href="#services">Explore Services</a>
           </div>
         </div>
-        <div class="hero-card">
-          <div class="card-top">
-            <span class="status-dot"></span>
-            <span>QUICK SERVICE</span>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <img src="assets/icon.png" alt="">
           </div>
-          <h2>Need pest control?</h2>
-          <p>Tell us what you are dealing with and we’ll help you choose the right service.</p>
-          <a href="#contact" class="mini-cta">Request a callback <span>↗</span></a>
-          <div class="hero-card-pattern"></div>
         </div>
       </div>
     </section>
 
-    <section class="stats">
-      <div class="container stats-grid">
-        <div><strong>24/7</strong><span>Quick response</span></div>
-        <div><strong>5+</strong><span>Service regions</span></div>
-        <div><strong>10+</strong><span>Pest solutions</span></div>
-        <div><strong>100%</strong><span>Service focused</span></div>
+    <div class="trust-strip">
+      <div class="container trust-grid">
+        <div class="trust-item"><strong>Delhi NCR</strong><span>Primary service region</span></div>
+        <div class="trust-item"><strong>4 Regions</strong><span>Delhi NCR, Rajasthan, Haryana, Uttarakhand</span></div>
+        <div class="trust-item"><strong>8 Services</strong><span>Common household & commercial pests</span></div>
+        <div class="trust-item"><strong>Multiple Spaces</strong><span>Homes, offices, hospitality & more</span></div>
       </div>
-    </section>
+    </div>
 
-    <section class="section" id="services">
+    <section id="services">
       <div class="container">
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">OUR SERVICES</span>
-            <h2>Pest control for every kind of space.</h2>
-          </div>
-          <p>From everyday home protection to commercial pest management, this prototype gives you a clean starting point for your future service catalogue.</p>
+        <div class="section-head">
+          <div class="kicker">Our Services</div>
+          <h2>Focused solutions for common pest problems.</h2>
+          <p>
+            Choose the pest control service that matches the problem in your space.
+            Pestokill covers the core pest categories listed below.
+          </p>
         </div>
 
         <div class="service-grid">
-          <article class="service-card featured">
-            <div class="icon">⌂</div>
-            <h3>Residential Pest Control</h3>
-            <p>Protection for apartments, houses, villas and societies.</p>
-            <a href="#contact">Explore service →</a>
-          </article>
-          <article class="service-card">
-            <div class="icon">▦</div>
-            <h3>Commercial Spaces</h3>
-            <p>Solutions for offices, shops, warehouses and workplaces.</p>
-            <a href="#contact">Explore service →</a>
-          </article>
-          <article class="service-card">
-            <div class="icon">♨</div>
-            <h3>Restaurants & Hotels</h3>
-            <p>Practical pest management for food and hospitality spaces.</p>
-            <a href="#contact">Explore service →</a>
-          </article>
-          <article class="service-card">
-            <div class="icon">✚</div>
-            <h3>Hospital & Institutional</h3>
-            <p>Professional service for sensitive public and private spaces.</p>
-            <a href="#contact">Explore service →</a>
-          </article>
+          <article class="service"><div class="service-icon">🪳</div><h3>Cockroach Control</h3><p>Targeted treatment for cockroach activity in residential and commercial spaces.</p></article>
+          <article class="service"><div class="service-icon">🐜</div><h3>Ant Control</h3><p>Solutions for visible ant activity and recurring infestations.</p></article>
+          <article class="service"><div class="service-icon">🦟</div><h3>Mosquito Control</h3><p>Pest management focused on mosquito activity around usable spaces.</p></article>
+          <article class="service"><div class="service-icon">🪵</div><h3>Termite Control</h3><p>Control solutions for termite problems affecting properties and structures.</p></article>
+          <article class="service"><div class="service-icon">🐀</div><h3>Rodent / Rat Control</h3><p>Practical pest control for rat and rodent activity in occupied spaces.</p></article>
+          <article class="service"><div class="service-icon">🛏️</div><h3>Bed Bug Control</h3><p>Focused treatment for bed bug infestations in homes and accommodation spaces.</p></article>
+          <article class="service"><div class="service-icon">🪰</div><h3>Fly Control</h3><p>Management of fly activity for cleaner and more comfortable spaces.</p></article>
+          <article class="service"><div class="service-icon">🕷️</div><h3>Spider Control</h3><p>Control solutions for spider activity in indoor and surrounding areas.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="split-section" id="about">
-      <div class="container split-grid">
-        <div class="visual-panel">
-          <div class="visual-badge">PESTOKILL<br><small>PROTECTION</small></div>
-          <div class="visual-copy">
-            <span>ONE TEAM</span>
-            <strong>ONE CLEANER<br>ENVIRONMENT</strong>
-          </div>
-        </div>
-        <div class="content-panel">
-          <span class="eyebrow">WHY PESTOKILL</span>
-          <h2>Professional service without the complicated process.</h2>
-          <p>We’re designing Pestokill as a straightforward service brand: easy to contact, easy to understand and focused on solving the pest problem.</p>
-          <div class="check-list">
-            <div><span>✓</span><div><strong>Inspection first</strong><p>Understand the issue before recommending a solution.</p></div></div>
-            <div><span>✓</span><div><strong>Clear service approach</strong><p>Simple communication about what the treatment involves.</p></div></div>
-            <div><span>✓</span><div><strong>Flexible for different spaces</strong><p>Residential, commercial and institutional requirements.</p></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section areas" id="areas">
-      <div class="container">
-        <div class="section-heading compact">
-          <div>
-            <span class="eyebrow">SERVICE AREAS</span>
-            <h2>Serving Delhi NCR & beyond.</h2>
-          </div>
-        </div>
-        <div class="area-list">
-          <span>Delhi</span><span>Gurugram</span><span>Noida</span><span>Ghaziabad</span><span>Faridabad</span><span>Rajasthan</span><span>Haryana</span><span>Uttarakhand</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact">
-      <div class="container contact-grid">
+    <section id="coverage" class="dark-section">
+      <div class="container coverage">
         <div>
-          <span class="eyebrow">GET IN TOUCH</span>
-          <h2>Tell us what you need help with.</h2>
-          <p>This is a prototype contact section. Later, we can connect it to WhatsApp, email, a form service or your own backend.</p>
-          <div class="contact-links">
-            <a href="tel:+919999999999"><span>☎</span> +91 99999 99999</a>
-            <a href="mailto:hello@pestokill.in"><span>✉</span> hello@pestokill.in</a>
+          <div class="section-head">
+            <div class="kicker" style="color:#8be83b">Service Coverage</div>
+            <h2>Serving Delhi NCR and beyond.</h2>
+            <p>
+              Pestokill provides pest control services in the Delhi-NCR region and
+              also serves clients in Rajasthan, Haryana and Uttarakhand.
+            </p>
+          </div>
+          <div class="region-list">
+            <div class="region">Delhi NCR</div>
+            <div class="region">Rajasthan</div>
+            <div class="region">Haryana</div>
+            <div class="region">Uttarakhand</div>
           </div>
         </div>
-        <form class="contact-form" id="contactForm">
-          <label>Name<input type="text" name="name" placeholder="Your name" required></label>
-          <label>Phone<input type="tel" name="phone" placeholder="Your phone number" required></label>
-          <label>Service needed<select name="service"><option>Residential pest control</option><option>Commercial pest control</option><option>Restaurant / hotel</option><option>Other</option></select></label>
-          <button class="btn btn-primary" type="submit">Request a Callback →</button>
-          <p class="form-note" id="formNote"></p>
+
+        <div class="coverage-card">
+          <img src="assets/cover.jpg" alt="Pestokill Services India branded cover image">
+          <div class="overlay">
+            <strong>Pestokill Services India Pvt Ltd</strong>
+            <span>Pest control for residential, commercial and other occupied spaces.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sectors">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Who We Serve</div>
+          <h2>Built for everyday spaces and business environments.</h2>
+          <p>
+            From individual homes to larger facilities, the service is designed around
+            the type of space and the pest issue being addressed.
+          </p>
+        </div>
+
+        <div class="audiences">
+          <article class="audience"><strong>Residential</strong><p>Homes and living spaces that need routine or problem-specific pest control.</p></article>
+          <article class="audience"><strong>Commercial</strong><p>Offices and commercial premises where pest activity can disrupt operations.</p></article>
+          <article class="audience"><strong>Restaurants & Hotels</strong><p>Hospitality and food-service environments requiring focused pest management.</p></article>
+          <article class="audience"><strong>Societies</strong><p>Residential societies and shared spaces with recurring pest concerns.</p></article>
+          <article class="audience"><strong>Hospitals</strong><p>Facility environments where pest control is an important part of property upkeep.</p></article>
+          <article class="audience"><strong>Public & Private Spaces</strong><p>Other occupied spaces where a pest control service is required.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" style="background:#f2f6ed;">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">How It Works</div>
+          <h2>A straightforward service journey.</h2>
+          <p>Start with the pest problem, understand the space, and move toward the appropriate treatment.</p>
+        </div>
+
+        <div class="process">
+          <article class="step"><div class="step-number">1</div><h3>Tell Us the Problem</h3><p>Share the pest issue, property type and location so the requirement can be understood.</p></article>
+          <article class="step"><div class="step-number">2</div><h3>Assess the Space</h3><p>Identify the pest activity and the areas that need attention.</p></article>
+          <article class="step"><div class="step-number">3</div><h3>Plan the Treatment</h3><p>Select the appropriate service approach based on the pest and property.</p></article>
+          <article class="step"><div class="step-number">4</div><h3>Carry Out the Service</h3><p>Complete the agreed pest control treatment for the affected space.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2>Have a pest problem?</h2>
+            <p>Tell Pestokill what you're dealing with and request a service quote.</p>
+          </div>
+          <a class="btn" href="#contact">Get Started</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="padding-top:20px;">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <div class="kicker" style="color:#8be83b">Contact Pestokill</div>
+          <h2 style="color:#fff">Let's discuss your requirement.</h2>
+          <p>
+            For service enquiries, share your pest problem, property type and service
+            location. The static site uses email for quote requests, so no backend is required.
+          </p>
+          <div class="contact-line">
+            <small>Email</small>
+            <a href="mailto:pestokillservicesindia@gmail.com">pestokillservicesindia@gmail.com</a>
+          </div>
+          <div class="contact-line">
+            <small>Website</small>
+            <a href="https://pestokillservices.com/">pestokillservices.com</a>
+          </div>
+          <div class="contact-line">
+            <small>Service Areas</small>
+            <span>Delhi NCR • Rajasthan • Haryana • Uttarakhand</span>
+          </div>
+        </div>
+
+        <form class="quote-form" id="quoteForm">
+          <div class="kicker">Request a Quote</div>
+          <h2>Tell us what you need.</h2>
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" required placeholder="Your name">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="location">Service location</label>
+              <input id="location" name="location" required placeholder="City / area">
+            </div>
+            <div class="field">
+              <label for="service">Service</label>
+              <select id="service" name="service">
+                <option>Cockroach control</option>
+                <option>Ant control</option>
+                <option>Mosquito control</option>
+                <option>Termite control</option>
+                <option>Rodent / rat control</option>
+                <option>Bed bug control</option>
+                <option>Fly control</option>
+                <option>Spider control</option>
+                <option>Not sure / need advice</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="message">Tell us about the problem</label>
+              <textarea id="message" name="message" placeholder="Property type, pest issue, approximate size, urgency, etc."></textarea>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" type="submit">Send Enquiry</button>
+          </div>
+          <div class="form-note">Submitting opens your default email app with the enquiry prepared for Pestokill.</div>
         </form>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-wrap">
-      <a class="brand footer-brand" href="#top"><span class="brand-mark">P</span><span><strong>PESTOKILL</strong><small>Services</small></span></a>
-      <p>© <span id="year"></span> Pestokill Services. Prototype website.</p>
-      <a href="#top">Back to top ↑</a>
+    <div class="container footer-grid">
+      <small>© <span id="year"></span> Pestokill Services India Pvt Ltd. All rights reserved.</small>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#coverage">Coverage</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    document.querySelectorAll('#nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('quoteForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const subject = `Pestokill enquiry - ${data.get('service')}`;
+      const body = [
+        `Name: ${data.get('name')}`,
+        `Email: ${data.get('email')}`,
+        `Service location: ${data.get('location')}`,
+        `Service: ${data.get('service')}`,
+        '',
+        `Problem details:`,
+        data.get('message') || '(not provided)'
+      ].join('\n');
+
+      window.location.href =
+        `mailto:pestokillservicesindia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
 </body>
 </html>
