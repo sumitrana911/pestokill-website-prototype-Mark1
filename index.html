@@ -15,488 +15,545 @@
   <meta property="og:image" content="assets/cover.jpg">
 
   <style>
-    :root {
-      --green: #57c800;
-      --green-dark: #3d9e00;
-      --green-soft: #effbdd;
-      --orange: #f99a12;
-      --orange-dark: #e47700;
-      --ink: #171717;
-      --muted: #626262;
-      --line: #e7e7e7;
-      --white: #fff;
-      --bg: #fbfcf8;
-      --shadow: 0 18px 50px rgba(0,0,0,.08);
-      --radius: 22px;
-      --max: 1180px;
-    }
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    button, input, textarea, select { font: inherit; }
+  :root {
+    --green: #63c61d;
+    --green-deep: #3d8612;
+    --green-soft: #eef8e7;
+    --orange: #f59b20;
+    --orange-soft: #fff3df;
+    --ink: #1c2520;
+    --muted: #66716b;
+    --line: #e5eae5;
+    --white: #fff;
+    --bg: #f7f9f6;
+    --dark: #18201c;
+    --dark-2: #222c26;
+    --max: 1180px;
+    --shadow: 0 18px 55px rgba(26, 39, 30, .08);
+    --radius: 22px;
+  }
 
-    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "DM Sans", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.65;
+    font-weight: 400;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  button, input, textarea, select { font: inherit; }
 
-    .topbar {
-      background: #171717;
-      color: #fff;
-      font-size: .88rem;
-    }
-    .topbar-inner {
-      min-height: 38px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-    .topbar a { color: #fff; opacity: .92; }
-    .topbar a:hover { color: #b9ff71; }
+  .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255,255,255,.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(0,0,0,.07);
-    }
-    .nav {
-      min-height: 82px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      min-width: 0;
-    }
-    .brand img { width: 54px; height: 54px; object-fit: contain; }
-    .brand-text { min-width: 0; }
-    .brand-name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 900;
-      letter-spacing: .04em;
-      font-size: 1.28rem;
-      line-height: 1;
-    }
-    .brand-sub {
-      margin-top: 5px;
-      font-size: .66rem;
-      letter-spacing: .22em;
-      white-space: nowrap;
-    }
-    nav ul {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-weight: 700;
-      font-size: .93rem;
-    }
-    nav a:hover { color: var(--green-dark); }
-    .nav-cta, .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 0;
-      cursor: pointer;
-      border-radius: 999px;
-      font-weight: 800;
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .nav-cta {
-      background: var(--green);
-      padding: 11px 18px;
-    }
-    .nav-cta:hover, .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(87,200,0,.22); }
-    .menu {
+  .topbar {
+    background: var(--dark);
+    color: #eaf0eb;
+    font-size: .84rem;
+  }
+  .topbar-inner {
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .topbar a { color: #d9f4c9; }
+  .topbar a:hover { color: #fff; }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(28,37,32,.07);
+  }
+  .nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+  .brand img { width: 50px; height: 50px; object-fit: contain; }
+  .brand-name {
+    font-family: Manrope, sans-serif;
+    font-weight: 800;
+    letter-spacing: .025em;
+    font-size: 1.12rem;
+    line-height: 1;
+  }
+  .brand-sub {
+    margin-top: 5px;
+    font-size: .6rem;
+    letter-spacing: .18em;
+    white-space: nowrap;
+    color: #6c746f;
+  }
+  nav ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: .92rem;
+  }
+  nav a:hover { color: var(--green-deep); }
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 999px;
+    background: #25d366;
+    color: #073b1b !important;
+    padding: 10px 16px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(37,211,102,.18);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .whatsapp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(37,211,102,.25);
+  }
+  .menu {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+    font-size: 1.55rem;
+    cursor: pointer;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 83% 25%, rgba(99,198,29,.13), transparent 28%),
+      linear-gradient(135deg, #fff 0%, #f7fbf4 58%, #eef7e8 100%);
+    padding: 76px 0 72px;
+  }
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.03fr .97fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .eyebrow, .kicker {
+    color: var(--green-deep);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .76rem;
+  }
+  .eyebrow {
+    display: inline-flex;
+    background: var(--green-soft);
+    border: 1px solid #d7ebca;
+    padding: 7px 11px;
+    border-radius: 999px;
+  }
+  h1, h2 {
+    font-family: Manrope, sans-serif;
+    letter-spacing: -.035em;
+  }
+  h1 {
+    font-size: clamp(2.7rem, 5.8vw, 5rem);
+    line-height: 1.02;
+    margin: 19px 0 18px;
+    font-weight: 700;
+  }
+  h1 span { color: var(--green-deep); }
+  .hero p {
+    color: var(--muted);
+    max-width: 650px;
+    font-size: 1.03rem;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 27px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 999px;
+    padding: 13px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary { background: var(--dark); color: #fff; box-shadow: 0 9px 22px rgba(24,32,28,.14); }
+  .btn-light { background: #fff; border: 1px solid var(--line); }
+
+  .hero-visual {
+    position: relative;
+    min-height: 450px;
+    display: grid;
+    place-items: center;
+  }
+  .hero-card {
+    width: min(100%, 470px);
+    aspect-ratio: 1 / 1;
+    border-radius: 32px;
+    background: var(--dark);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(20,32,25,.17);
+    position: relative;
+  }
+  .hero-card::before, .hero-card::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+  }
+  .hero-card::before {
+    width: 340px; height: 340px;
+    left: -120px; bottom: -120px;
+    background: var(--green);
+  }
+  .hero-card::after {
+    width: 230px; height: 230px;
+    right: -80px; top: -70px;
+    background: var(--orange);
+  }
+  .hero-card img {
+    position: relative;
+    z-index: 1;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 22px rgba(0,0,0,.22));
+  }
+  .floating-label {
+    position: absolute;
+    z-index: 2;
+    background: rgba(255,255,255,.96);
+    border: 1px solid #e4eae2;
+    border-radius: 16px;
+    padding: 12px 15px;
+    box-shadow: 0 14px 32px rgba(0,0,0,.1);
+    font-size: .82rem;
+  }
+  .floating-label strong { display: block; font-size: .9rem; }
+  .floating-label span { color: var(--muted); }
+  .label-one { top: 35px; left: 4px; }
+  .label-two { right: 2px; bottom: 35px; }
+
+  .trust-strip { background: var(--dark); color: #fff; }
+  .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .trust-item {
+    text-align: center;
+    padding: 20px 15px;
+    border-right: 1px solid rgba(255,255,255,.11);
+  }
+  .trust-item:last-child { border-right: 0; }
+  .trust-item strong { display: block; font-size: .98rem; font-weight: 600; }
+  .trust-item span { display: block; color: #aeb8b1; font-size: .8rem; margin-top: 3px; }
+
+  section { padding: 86px 0; }
+  .section-head { max-width: 720px; margin-bottom: 38px; }
+  h2 {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    line-height: 1.08;
+    margin: 9px 0 13px;
+    font-weight: 700;
+  }
+  .section-head p { margin: 0; color: var(--muted); }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .service {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 23px;
+    box-shadow: 0 6px 22px rgba(20,30,24,.035);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .service:hover {
+    transform: translateY(-4px);
+    border-color: #c9e6b7;
+    box-shadow: var(--shadow);
+  }
+  .service-icon {
+    width: 45px; height: 45px;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    background: var(--green-soft);
+    font-size: 1.2rem;
+    margin-bottom: 17px;
+  }
+  .service h3 { margin: 0 0 7px; font-size: 1.02rem; font-weight: 600; }
+  .service p { color: var(--muted); font-size: .87rem; margin: 0; }
+  .service-more {
+    margin-top: 13px;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    color: var(--green-deep);
+    font-size: .8rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .service-detail {
+    display: none;
+    color: var(--muted);
+    font-size: .82rem;
+    margin-top: 9px;
+  }
+  .service.open .service-detail { display: block; }
+
+  .approach {
+    background: #f0f5ed;
+  }
+  .process-visual {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+  }
+  .process-visual::before {
+    content: "";
+    position: absolute;
+    top: 37px;
+    left: 12%;
+    right: 12%;
+    height: 2px;
+    background: #cfe1c6;
+  }
+  .process-step {
+    position: relative;
+    text-align: center;
+    padding: 0 16px;
+  }
+  .process-dot {
+    position: relative;
+    z-index: 1;
+    width: 74px;
+    height: 74px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #cfe1c6;
+    display: grid;
+    place-items: center;
+    font-family: Manrope, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    box-shadow: 0 8px 22px rgba(45,78,36,.07);
+  }
+  .process-step:nth-child(2) .process-dot { color: #a35c00; border-color: #f1d09d; }
+  .process-step:nth-child(3) .process-dot { color: #557300; }
+  .process-step:nth-child(4) .process-dot { color: #a35c00; border-color: #f1d09d; }
+  .process-step h3 { font-size: 1rem; margin: 0 0 5px; font-weight: 600; }
+  .process-step p { color: var(--muted); font-size: .84rem; margin: 0; }
+
+  .dark-section { background: var(--dark); color: #fff; }
+  .dark-section .section-head p { color: #b7c0ba; }
+  .coverage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .coverage-card {
+    min-height: 430px;
+    border-radius: 28px;
+    overflow: hidden;
+    position: relative;
+    background: #263128;
+  }
+  .coverage-card img { width: 100%; height: 100%; min-height: 430px; object-fit: cover; opacity: .9; }
+  .coverage-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 35%, rgba(0,0,0,.72));
+  }
+  .coverage-card .overlay {
+    position: absolute;
+    z-index: 1;
+    left: 22px; right: 22px; bottom: 22px;
+    background: rgba(15,22,18,.83);
+    border: 1px solid rgba(255,255,255,.12);
+    padding: 17px 18px;
+    border-radius: 17px;
+    backdrop-filter: blur(10px);
+  }
+  .coverage-card .overlay strong { display: block; font-weight: 600; }
+  .coverage-card .overlay span { color: #d1d8d3; font-size: .82rem; }
+  .coverage-points {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+  }
+  .coverage-point {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: var(--dark-2);
+    border: 1px solid #344039;
+    border-radius: 15px;
+    padding: 14px 15px;
+  }
+  .coverage-point b { color: #a8eb7b; }
+  .coverage-point span { color: #c0c8c3; font-size: .85rem; }
+
+  .audiences {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .audience {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 19px;
+    padding: 24px;
+  }
+  .audience-icon {
+    width: 42px; height: 42px;
+    border-radius: 12px;
+    background: var(--orange-soft);
+    display: grid;
+    place-items: center;
+    margin-bottom: 15px;
+  }
+  .audience strong { font-weight: 600; }
+  .audience p { color: var(--muted); margin: 6px 0 0; font-size: .87rem; }
+
+  .contact-wrap {
+    display: grid;
+    grid-template-columns: .82fr 1.18fr;
+    gap: 28px;
+  }
+  .contact-card {
+    background: var(--dark);
+    color: #fff;
+    border-radius: 28px;
+    padding: 30px;
+  }
+  .contact-card h2 { color: #fff; }
+  .contact-card > p { color: #bdc6c0; font-size: .9rem; }
+  .contact-line {
+    padding: 15px 0;
+    border-bottom: 1px solid #344039;
+  }
+  .contact-line:last-child { border-bottom: 0; }
+  .contact-line small { display: block; color: #8f9b93; margin-bottom: 3px; }
+  .contact-line a { color: #e6f8dc; font-weight: 600; }
+  .contact-address { color: #d9dfdb; font-size: .88rem; }
+  .contact-actions { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 9px; }
+  .contact-actions .whatsapp-btn { background: #25d366; }
+  .contact-actions .call-btn { background: #fff; color: var(--dark); }
+
+  .cta {
+    background: linear-gradient(120deg, #eaf7df, #fff7e8);
+    border: 1px solid #dcebd4;
+    border-radius: 28px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+  }
+  .cta h2 { margin: 0 0 5px; font-size: clamp(1.8rem, 3vw, 2.55rem); }
+  .cta p { margin: 0; color: var(--muted); }
+
+  footer { background: #111713; color: #fff; padding: 32px 0; }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  footer small { color: #a8b1ab; }
+  .footer-links { display: flex; gap: 18px; font-size: .88rem; color: #d4dbd6; }
+  .footer-links a:hover { color: #a9eb7a; }
+
+  .whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 50;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #25d366;
+    color: #073b1b;
+    box-shadow: 0 14px 30px rgba(37,211,102,.3);
+    font-size: 1.45rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 1000px) {
+    .hero-grid, .coverage, .contact-wrap { grid-template-columns: 1fr; }
+    .hero { padding-top: 58px; }
+    .hero-visual { min-height: 380px; }
+    .service-grid { grid-template-columns: repeat(2, 1fr); }
+    .audiences { grid-template-columns: repeat(2, 1fr); }
+    .process-visual { grid-template-columns: repeat(2, 1fr); row-gap: 35px; }
+    .process-visual::before { display: none; }
+  }
+
+  @media (max-width: 760px) {
+    .container { width: min(var(--max), calc(100% - 28px)); }
+    .topbar-inner { justify-content: center; text-align: center; }
+    .topbar-inner > span { display: none; }
+    .nav { min-height: 70px; }
+    .menu { display: block; }
+    nav {
       display: none;
-      border: 0;
-      background: transparent;
-      font-size: 1.6rem;
-      cursor: pointer;
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 80% 20%, rgba(87,200,0,.15), transparent 32%),
-        linear-gradient(135deg, #fff 0%, #f8fff1 55%, #f2fae9 100%);
-      padding: 82px 0 70px;
-    }
-    .hero::after {
-      content: "";
       position: absolute;
-      right: -130px;
-      bottom: -180px;
-      width: 430px;
-      height: 430px;
-      border-radius: 50%;
-      background: rgba(249,154,18,.11);
-    }
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      align-items: center;
-      gap: 60px;
-    }
-    .eyebrow {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      background: var(--green-soft);
-      color: #377900;
-      border: 1px solid #d9f3b9;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: .8rem;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.6rem, 6vw, 5.15rem);
-      line-height: .98;
-      margin: 20px 0;
-      letter-spacing: -.035em;
-    }
-    h1 span { color: var(--green-dark); }
-    .hero p {
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 650px;
-    }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-    .btn { padding: 14px 21px; }
-    .btn-primary { background: var(--orange); color: #171717; }
-    .btn-secondary { background: #171717; color: #fff; }
-    .btn-light { background: #fff; border: 1px solid var(--line); }
-
-    .hero-visual {
-      min-height: 450px;
-      display: grid;
-      place-items: center;
-      position: relative;
-    }
-    .hero-card {
-      width: min(100%, 490px);
-      aspect-ratio: 1 / 1;
-      background: #171717;
-      border-radius: 34px;
-      padding: 34px;
-      display: grid;
-      place-items: center;
-      box-shadow: 0 30px 70px rgba(0,0,0,.16);
-      overflow: hidden;
-      position: relative;
-    }
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 330px;
-      height: 330px;
-      border-radius: 50%;
-      background: var(--green);
-      left: -100px;
-      bottom: -100px;
-      opacity: .95;
-    }
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: var(--orange);
-      right: -80px;
-      top: -70px;
-      opacity: .9;
-    }
-    .hero-card img {
-      position: relative;
-      z-index: 1;
-      width: 72%;
-      height: 72%;
-      object-fit: contain;
-      filter: drop-shadow(0 20px 20px rgba(0,0,0,.22));
-    }
-
-    .trust-strip { background: #171717; color: #fff; }
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-    .trust-item {
-      padding: 23px 18px;
-      border-right: 1px solid rgba(255,255,255,.12);
-      text-align: center;
-    }
-    .trust-item:last-child { border-right: 0; }
-    .trust-item strong { display: block; font-size: 1.05rem; }
-    .trust-item span { display: block; color: #cfcfcf; font-size: .82rem; margin-top: 3px; }
-
-    section { padding: 88px 0; }
-    .section-head { max-width: 720px; margin-bottom: 42px; }
-    .kicker {
-      color: var(--green-dark);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .13em;
-      font-size: .78rem;
-    }
-    h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 4vw, 3.4rem);
-      line-height: 1.05;
-      margin: 9px 0 13px;
-    }
-    .section-head p { color: var(--muted); margin: 0; }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-    .service {
+      left: 0; right: 0; top: 70px;
+      padding: 12px 20px 20px;
       background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 25px;
-      box-shadow: 0 7px 24px rgba(0,0,0,.035);
-      transition: transform .18s ease, border-color .18s ease;
+      border-bottom: 1px solid var(--line);
     }
-    .service:hover { transform: translateY(-5px); border-color: #bde98c; }
-    .service-icon {
-      width: 48px; height: 48px;
-      border-radius: 14px;
-      display: grid; place-items: center;
-      background: var(--green-soft);
-      font-size: 1.35rem;
-      margin-bottom: 20px;
-    }
-    .service h3 { margin: 0 0 7px; font-size: 1.06rem; }
-    .service p { color: var(--muted); font-size: .9rem; margin: 0; }
-
-    .dark-section { background: #171717; color: #fff; }
-    .dark-section .section-head p { color: #bdbdbd; }
-    .coverage {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 50px;
-      align-items: center;
-    }
-    .coverage-card {
-      border-radius: 28px;
-      overflow: hidden;
-      background: #fff;
-      min-height: 430px;
-      position: relative;
-    }
-    .coverage-card img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      min-height: 430px;
-    }
-    .coverage-card .overlay {
-      position: absolute;
-      inset: auto 20px 20px 20px;
-      background: rgba(0,0,0,.82);
-      color: #fff;
-      padding: 18px 20px;
-      border-radius: 18px;
-      backdrop-filter: blur(10px);
-    }
-    .coverage-card .overlay strong { display: block; font-size: 1.05rem; }
-    .coverage-card .overlay span { color: #ddd; font-size: .85rem; }
-    .region-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 13px;
-      margin-top: 26px;
-    }
-    .region {
-      border: 1px solid #373737;
-      background: #202020;
-      border-radius: 16px;
-      padding: 16px 18px;
-      font-weight: 800;
-    }
-    .region::before {
-      content: "✓";
-      color: var(--green);
-      margin-right: 9px;
-    }
-
-    .audiences {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .audience {
-      background: #fff;
-      border-radius: 20px;
-      padding: 26px;
-      border: 1px solid var(--line);
-    }
-    .audience strong { font-size: 1.05rem; }
-    .audience p { color: var(--muted); margin: 7px 0 0; font-size: .9rem; }
-
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      counter-reset: step;
-    }
-    .step {
-      position: relative;
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 27px 23px;
-      border-radius: 20px;
-    }
-    .step-number {
-      width: 38px; height: 38px; border-radius: 50%;
-      background: var(--orange);
-      display: grid; place-items: center;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-    .step h3 { margin: 0 0 6px; }
-    .step p { margin: 0; color: var(--muted); font-size: .9rem; }
-
-    .cta {
-      padding: 34px;
-      border-radius: 30px;
-      background: linear-gradient(120deg, #57c800, #82dc28);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 25px;
-      align-items: center;
-      box-shadow: var(--shadow);
-    }
-    .cta h2 { margin: 0 0 6px; font-size: clamp(1.8rem, 3vw, 2.7rem); }
-    .cta p { margin: 0; color: #174300; }
-    .cta .btn { background: #171717; color: #fff; }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 38px;
-      align-items: start;
-    }
-    .contact-card {
-      background: #171717;
-      color: #fff;
-      border-radius: 28px;
-      padding: 30px;
-    }
-    .contact-card p { color: #c9c9c9; }
-    .contact-line {
-      padding: 15px 0;
-      border-bottom: 1px solid #333;
-    }
-    .contact-line:last-child { border-bottom: 0; }
-    .contact-line small { display: block; color: #9d9d9d; margin-bottom: 2px; }
-    .contact-line a { font-weight: 800; }
-    .quote-form {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 30px;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-    .field { display: flex; flex-direction: column; gap: 6px; }
-    .field.full { grid-column: 1 / -1; }
-    label { font-size: .84rem; font-weight: 800; }
-    input, select, textarea {
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 12px 13px;
-      outline: none;
-      background: #fff;
-    }
-    input:focus, select:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(87,200,0,.11); }
-    textarea { min-height: 125px; resize: vertical; }
-    .form-note { color: var(--muted); font-size: .8rem; margin-top: 10px; }
-
-    footer {
-      background: #111;
-      color: #fff;
-      padding: 34px 0;
-    }
-    .footer-grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-    footer small { color: #a7a7a7; }
-    .footer-links { display: flex; gap: 18px; font-size: .9rem; }
-    .footer-links a:hover { color: #a9f65e; }
-
-    @media (max-width: 1000px) {
-      .hero-grid, .coverage, .contact-grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 60px; }
-      .hero-visual { min-height: 390px; }
-      .service-grid { grid-template-columns: repeat(2, 1fr); }
-      .process { grid-template-columns: repeat(2, 1fr); }
-      .audiences { grid-template-columns: repeat(2, 1fr); }
-      .trust-grid { grid-template-columns: repeat(2, 1fr); }
-      .trust-item:nth-child(2) { border-right: 0; }
-      .trust-item:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.12); }
-    }
-
-    @media (max-width: 760px) {
-      .container { width: min(var(--max), calc(100% - 28px)); }
-      .topbar-inner { justify-content: center; text-align: center; }
-      .topbar-inner span { display: none; }
-      .nav { min-height: 72px; }
-      nav { display: none; position: absolute; left: 0; right: 0; top: 72px; background: #fff; border-bottom: 1px solid var(--line); padding: 12px 20px 20px; }
-      nav.open { display: block; }
-      nav ul { flex-direction: column; align-items: stretch; gap: 0; }
-      nav li a { display: block; padding: 11px 0; }
-      .nav-cta { text-align: center; margin-top: 8px; }
-      .menu { display: block; }
-      .brand-name { font-size: 1.05rem; }
-      .brand-sub { font-size: .55rem; }
-      .brand img { width: 46px; height: 46px; }
-      .hero { padding: 52px 0; }
-      h1 { font-size: clamp(2.6rem, 15vw, 4.1rem); }
-      .hero-visual { min-height: 330px; }
-      .hero-card { width: 90%; padding: 24px; border-radius: 25px; }
-      section { padding: 65px 0; }
-      .service-grid, .audiences, .process { grid-template-columns: 1fr; }
-      .region-list { grid-template-columns: 1fr; }
-      .trust-grid { grid-template-columns: 1fr 1fr; }
-      .trust-item { padding: 18px 10px; }
-      .cta { grid-template-columns: 1fr; padding: 27px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .footer-grid { flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+    nav.open { display: block; }
+    nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+    nav li a { display: block; padding: 10px 0; }
+    nav .whatsapp-btn { text-align: center; margin-top: 6px; }
+    .brand img { width: 44px; height: 44px; }
+    .brand-name { font-size: 1rem; }
+    .brand-sub { font-size: .5rem; }
+    .hero { padding: 50px 0 55px; }
+    h1 { font-size: clamp(2.5rem, 14vw, 4rem); }
+    .hero-visual { min-height: 320px; }
+    .hero-card { width: 88%; border-radius: 25px; }
+    .floating-label { display: none; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .trust-item { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.11); }
+    .trust-item:last-child { border-bottom: 0; }
+    section { padding: 65px 0; }
+    .service-grid, .audiences, .process-visual { grid-template-columns: 1fr; }
+    .cta { align-items: flex-start; flex-direction: column; padding: 25px; }
+    .footer-grid { flex-direction: column; align-items: flex-start; }
+    .whatsapp-float { right: 15px; bottom: 15px; }
+  }
+</style>
 
   <script type="application/ld+json">
   {
@@ -504,13 +561,17 @@
     "@type": "PestControl",
     "name": "Pestokill Services India Pvt Ltd",
     "url": "https://pestokillservices.com/",
+    "telephone": "+91 99102 24202",
     "email": "pestokillservicesindia@gmail.com",
-    "areaServed": [
-      "Delhi NCR",
-      "Rajasthan",
-      "Haryana",
-      "Uttarakhand"
-    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "House No. S-31C, Ground Floor, Pvt Colony, S. N. Puri",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110065",
+      "addressCountry": "IN"
+    },
+    "areaServed": "Delhi NCR",
     "serviceType": [
       "Cockroach control",
       "Ant control",
@@ -548,10 +609,10 @@
       <nav id="nav">
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#coverage">Coverage</a></li>
+          <li><a href="#process">How It Works</a></li>
           <li><a href="#sectors">Who We Serve</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a class="nav-cta" href="#contact">Get a Quote</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="whatsapp-btn" href="https://wa.me/919910224202" target="_blank" rel="noopener">💬 WhatsApp</a></li>
         </ul>
       </nav>
     </div>
@@ -561,56 +622,106 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Pest Control Solutions</span>
-          <h1>Keep pests out.<br><span>Keep life moving.</span></h1>
+          <span class="eyebrow">Professional Pest Management</span>
+          <h1>A cleaner space starts with <span>better pest control.</span></h1>
           <p>
-            Pestokill Services India Pvt Ltd provides targeted pest control solutions
-            for homes, offices, hospitals, restaurants, hotels, societies and other
-            public or private spaces across Delhi NCR and selected North Indian regions.
+            Pestokill Services India Pvt Ltd helps homes, offices, hospitals,
+            restaurants, hotels, societies and other occupied spaces manage common
+            pest problems with practical, problem-focused service.
           </p>
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Request a Quote</a>
-            <a class="btn btn-secondary" href="#services">Explore Services</a>
+            <a class="whatsapp-btn" href="https://wa.me/919910224202" target="_blank" rel="noopener">💬 Talk to Pestokill on WhatsApp</a>
+            <a class="btn btn-light" href="#services">Explore Services</a>
           </div>
         </div>
 
         <div class="hero-visual" aria-hidden="true">
+          <div class="floating-label label-one"><strong>Delhi NCR focused</strong><span>Residential & commercial</span></div>
           <div class="hero-card">
             <img src="assets/icon.png" alt="">
           </div>
+          <div class="floating-label label-two"><strong>8 core pest services</strong><span>From ants to termites</span></div>
         </div>
       </div>
     </section>
 
     <div class="trust-strip">
       <div class="container trust-grid">
-        <div class="trust-item"><strong>Delhi NCR</strong><span>Primary service region</span></div>
-        <div class="trust-item"><strong>4 Regions</strong><span>Delhi NCR, Rajasthan, Haryana, Uttarakhand</span></div>
-        <div class="trust-item"><strong>8 Services</strong><span>Common household & commercial pests</span></div>
-        <div class="trust-item"><strong>Multiple Spaces</strong><span>Homes, offices, hospitality & more</span></div>
+        <div class="trust-item"><strong>Delhi NCR focused</strong><span>Serving homes and businesses across the region</span></div>
+        <div class="trust-item"><strong>8 core services</strong><span>Common residential and commercial pest problems</span></div>
+        <div class="trust-item"><strong>Direct WhatsApp support</strong><span>Connect directly on +91 99102 24202</span></div>
       </div>
+    </div>
     </div>
 
     <section id="services">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">Our Services</div>
-          <h2>Focused solutions for common pest problems.</h2>
+          <div class="kicker">Pest Control Services</div>
+          <h2>Understand the problem. Choose the right service.</h2>
           <p>
-            Choose the pest control service that matches the problem in your space.
-            Pestokill covers the core pest categories listed below.
+            Different pests behave differently, so the right service starts with identifying
+            the problem and the areas affected. Tap any service below for a quick overview.
           </p>
         </div>
 
         <div class="service-grid">
-          <article class="service"><div class="service-icon">🪳</div><h3>Cockroach Control</h3><p>Targeted treatment for cockroach activity in residential and commercial spaces.</p></article>
-          <article class="service"><div class="service-icon">🐜</div><h3>Ant Control</h3><p>Solutions for visible ant activity and recurring infestations.</p></article>
-          <article class="service"><div class="service-icon">🦟</div><h3>Mosquito Control</h3><p>Pest management focused on mosquito activity around usable spaces.</p></article>
-          <article class="service"><div class="service-icon">🪵</div><h3>Termite Control</h3><p>Control solutions for termite problems affecting properties and structures.</p></article>
-          <article class="service"><div class="service-icon">🐀</div><h3>Rodent / Rat Control</h3><p>Practical pest control for rat and rodent activity in occupied spaces.</p></article>
-          <article class="service"><div class="service-icon">🛏️</div><h3>Bed Bug Control</h3><p>Focused treatment for bed bug infestations in homes and accommodation spaces.</p></article>
-          <article class="service"><div class="service-icon">🪰</div><h3>Fly Control</h3><p>Management of fly activity for cleaner and more comfortable spaces.</p></article>
-          <article class="service"><div class="service-icon">🕷️</div><h3>Spider Control</h3><p>Control solutions for spider activity in indoor and surrounding areas.</p></article>
+          <article class="service">
+            <div class="service-icon">🪳</div>
+            <h3>Cockroach Control</h3>
+            <p>For recurring cockroach activity in kitchens, utility areas, offices and other occupied spaces.</p>
+            <div class="service-more" onclick="toggleService(this)">View details +</div>
+            <div class="service-detail">The service focuses on identifying activity areas, treating relevant locations and giving practical guidance for keeping the treated space less attractive to cockroaches.</div>
+          </article>
+          <article class="service">
+            <div class="service-icon">🐜</div>
+            <h3>Ant Control</h3>
+            <p>For trails, recurring ant activity and nuisance around food, kitchens and living areas.</p>
+            <div class="service-more" onclick="toggleService(this)">View details +</div>
+            <div class="service-detail">Treatment is planned around where ants are active rather than only treating the most visible point of activity.</div>
+          </article>
+          <article class="service">
+            <div class="service-icon">🦟</div>
+            <h3>Mosquito Control</h3>
+            <p>For mosquito activity around homes, offices, societies and other usable outdoor or indoor spaces.</p>
+            <div class="service-more" onclick="toggleService(this)">View details +</div>
+            <div class="service-detail">The approach considers mosquito activity and potential breeding or resting areas around the property, followed by targeted control and prevention guidance.</div>
+          </article>
+          <article class="service">
+            <div class="service-icon">🪵</div>
+            <h3>Termite Control</h3>
+            <p>For signs of termite activity affecting wooden fixtures, property areas or structures.</p>
+            <div class="service-more" onclick="toggleService(this)">View details +</div>
+            <div class="service-detail">A termite service begins with locating signs of activity and understanding the property before selecting the appropriate treatment approach.</div>
+          </article>
+          <article class="service">
+            <div class="service-icon">🐀</div>
+            <h3>Rodent / Rat Control</h3>
+            <p>For signs of rats or rodents, including droppings, movement, gnawing or recurring sightings.</p>
+            <div class="service-more" onclick="toggleService(this)">View details +</div>
+            <div class="service-detail">The focus is on locating activity, identifying access or problem areas and applying an appropriate control plan for the space.</div>
+          </article>
+          <article class="service">
+            <div class="service-icon">🛏️</div>
+            <h3>Bed Bug Control</h3>
+            <p>For bed bug activity in bedrooms, accommodation spaces, furniture and other resting areas.</p>
+            <div class="service-more" onclick="toggleService(this)">View details +</div>
+            <div class="service-detail">Because bed bugs can hide in small cracks and fabric seams, treatment planning considers beds, furniture, surrounding areas and the level of activity.</div>
+          </article>
+          <article class="service">
+            <div class="service-icon">🪰</div>
+            <h3>Fly Control</h3>
+            <p>For persistent fly activity in homes, restaurants, offices and other occupied spaces.</p>
+            <div class="service-more" onclick="toggleService(this)">View details +</div>
+            <div class="service-detail">The service looks beyond visible flies and considers the conditions that may be supporting recurring activity.</div>
+          </article>
+          <article class="service">
+            <div class="service-icon">🕷️</div>
+            <h3>Spider Control</h3>
+            <p>For spider activity, webs and nuisance around indoor and surrounding property areas.</p>
+            <div class="service-more" onclick="toggleService(this)">View details +</div>
+            <div class="service-detail">Treatment focuses on active areas and the conditions that allow spiders and their prey to remain around the property.</div>
+          </article>
         </div>
       </div>
     </section>
@@ -619,26 +730,26 @@
       <div class="container coverage">
         <div>
           <div class="section-head">
-            <div class="kicker" style="color:#8be83b">Service Coverage</div>
-            <h2>Serving Delhi NCR and beyond.</h2>
+            <div class="kicker" style="color:#a8eb7b">Service Area</div>
+            <h2>Delhi NCR and nearby areas.</h2>
             <p>
-              Pestokill provides pest control services in the Delhi-NCR region and
-              also serves clients in Rajasthan, Haryana and Uttarakhand.
+              Pestokill focuses on pest-control requirements across Delhi NCR and nearby
+              service areas, covering both residential and commercial properties.
             </p>
           </div>
-          <div class="region-list">
-            <div class="region">Delhi NCR</div>
-            <div class="region">Rajasthan</div>
-            <div class="region">Haryana</div>
-            <div class="region">Uttarakhand</div>
+          <div class="coverage-points">
+            <div class="coverage-point"><b>01</b><span>Homes, apartments and residential communities</span></div>
+            <div class="coverage-point"><b>02</b><span>Offices, shops and commercial properties</span></div>
+            <div class="coverage-point"><b>03</b><span>Restaurants, hotels and hospitality spaces</span></div>
+            <div class="coverage-point"><b>04</b><span>Hospitals and other occupied facilities</span></div>
           </div>
         </div>
 
         <div class="coverage-card">
           <img src="assets/cover.jpg" alt="Pestokill Services India branded cover image">
           <div class="overlay">
-            <strong>Pestokill Services India Pvt Ltd</strong>
-            <span>Pest control for residential, commercial and other occupied spaces.</span>
+            <strong>Delhi NCR pest control</strong>
+            <span>Residential, commercial and institutional pest-management requirements.</span>
           </div>
         </div>
       </div>
@@ -666,19 +777,38 @@
       </div>
     </section>
 
-    <section id="process" style="background:#f2f6ed;">
+    <section id="process" class="approach">
       <div class="container">
         <div class="section-head">
-          <div class="kicker">How It Works</div>
-          <h2>A straightforward service journey.</h2>
-          <p>Start with the pest problem, understand the space, and move toward the appropriate treatment.</p>
+          <div class="kicker">Our Service Approach</div>
+          <h2>From first conversation to a pest-control plan.</h2>
+          <p>
+            A simple four-stage journey keeps the service focused on the actual pest problem
+            and the space where it is happening.
+          </p>
         </div>
 
-        <div class="process">
-          <article class="step"><div class="step-number">1</div><h3>Tell Us the Problem</h3><p>Share the pest issue, property type and location so the requirement can be understood.</p></article>
-          <article class="step"><div class="step-number">2</div><h3>Assess the Space</h3><p>Identify the pest activity and the areas that need attention.</p></article>
-          <article class="step"><div class="step-number">3</div><h3>Plan the Treatment</h3><p>Select the appropriate service approach based on the pest and property.</p></article>
-          <article class="step"><div class="step-number">4</div><h3>Carry Out the Service</h3><p>Complete the agreed pest control treatment for the affected space.</p></article>
+        <div class="process-visual">
+          <article class="process-step">
+            <div class="process-dot">01</div>
+            <h3>Tell us the problem</h3>
+            <p>Share the pest, property type and service requirement on WhatsApp.</p>
+          </article>
+          <article class="process-step">
+            <div class="process-dot">02</div>
+            <h3>Understand the space</h3>
+            <p>Identify activity areas and the conditions around the problem.</p>
+          </article>
+          <article class="process-step">
+            <div class="process-dot">03</div>
+            <h3>Plan the service</h3>
+            <p>Select a suitable treatment approach for the pest and property.</p>
+          </article>
+          <article class="process-step">
+            <div class="process-dot">04</div>
+            <h3>Treat & guide</h3>
+            <p>Carry out the service and share practical guidance for the treated space.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -687,77 +817,54 @@
       <div class="container">
         <div class="cta">
           <div>
-            <h2>Have a pest problem?</h2>
-            <p>Tell Pestokill what you're dealing with and request a service quote.</p>
+            <h2>Need pest control in Delhi NCR?</h2>
+            <p>Connect with Pestokill directly and describe the issue on WhatsApp.</p>
           </div>
-          <a class="btn" href="#contact">Get Started</a>
+          <a class="whatsapp-btn" href="https://wa.me/919910224202" target="_blank" rel="noopener">💬 WhatsApp Pestokill</a>
         </div>
       </div>
     </section>
 
-    <section id="contact" style="padding-top:20px;">
-      <div class="container contact-grid">
+    <section id="contact">
+      <div class="container contact-wrap">
         <div class="contact-card">
-          <div class="kicker" style="color:#8be83b">Contact Pestokill</div>
-          <h2 style="color:#fff">Let's discuss your requirement.</h2>
+          <div class="kicker" style="color:#a8eb7b">Contact Pestokill</div>
+          <h2>Let's talk about the pest problem.</h2>
           <p>
-            For service enquiries, share your pest problem, property type and service
-            location. The static site uses email for quote requests, so no backend is required.
+            WhatsApp is the quickest way to share your requirement, photos or location
+            and start the conversation with Pestokill.
           </p>
+
+          <div class="contact-line">
+            <small>Phone / WhatsApp</small>
+            <a href="tel:+919910224202">+91 99102 24202</a>
+          </div>
           <div class="contact-line">
             <small>Email</small>
             <a href="mailto:pestokillservicesindia@gmail.com">pestokillservicesindia@gmail.com</a>
           </div>
           <div class="contact-line">
-            <small>Website</small>
-            <a href="https://pestokillservices.com/">pestokillservices.com</a>
+            <small>Registered Office</small>
+            <div class="contact-address">House No. S-31C, Ground Floor, Pvt Colony, S. N. Puri, New Delhi, Delhi 110065</div>
           </div>
-          <div class="contact-line">
-            <small>Service Areas</small>
-            <span>Delhi NCR • Rajasthan • Haryana • Uttarakhand</span>
+
+          <div class="contact-actions">
+            <a class="whatsapp-btn" href="https://wa.me/919910224202" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+            <a class="btn call-btn" href="tel:+919910224202">☎ Call Now</a>
           </div>
         </div>
 
-        <form class="quote-form" id="quoteForm">
-          <div class="kicker">Request a Quote</div>
-          <h2>Tell us what you need.</h2>
-          <div class="form-grid">
-            <div class="field">
-              <label for="name">Name</label>
-              <input id="name" name="name" required placeholder="Your name">
-            </div>
-            <div class="field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" required placeholder="you@example.com">
-            </div>
-            <div class="field">
-              <label for="location">Service location</label>
-              <input id="location" name="location" required placeholder="City / area">
-            </div>
-            <div class="field">
-              <label for="service">Service</label>
-              <select id="service" name="service">
-                <option>Cockroach control</option>
-                <option>Ant control</option>
-                <option>Mosquito control</option>
-                <option>Termite control</option>
-                <option>Rodent / rat control</option>
-                <option>Bed bug control</option>
-                <option>Fly control</option>
-                <option>Spider control</option>
-                <option>Not sure / need advice</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label for="message">Tell us about the problem</label>
-              <textarea id="message" name="message" placeholder="Property type, pest issue, approximate size, urgency, etc."></textarea>
-            </div>
+        <div>
+          <div class="section-head">
+            <div class="kicker">Quick Enquiry</div>
+            <h2>Send your requirement directly on WhatsApp.</h2>
+            <p>
+              No long form. Tap the button, describe the pest problem and share the
+              property location. Pestokill can then take the conversation forward.
+            </p>
           </div>
-          <div class="actions">
-            <button class="btn btn-primary" type="submit">Send Enquiry</button>
-          </div>
-          <div class="form-note">Submitting opens your default email app with the enquiry prepared for Pestokill.</div>
-        </form>
+          <a class="whatsapp-btn" style="padding:14px 20px; width:max-content" href="https://wa.me/919910224202?text=Hello%20Pestokill%2C%20I%20would%20like%20to%20enquire%20about%20pest%20control%20service." target="_blank" rel="noopener">💬 Start WhatsApp Enquiry</a>
+        </div>
       </div>
     </section>
   </main>
@@ -789,25 +896,14 @@
       });
     });
 
+    function toggleService(el) {
+      const card = el.closest('.service');
+      const open = card.classList.toggle('open');
+      el.textContent = open ? 'Hide details −' : 'View details +';
+    }
+
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.getElementById('quoteForm').addEventListener('submit', (event) => {
-      event.preventDefault();
-      const data = new FormData(event.currentTarget);
-      const subject = `Pestokill enquiry - ${data.get('service')}`;
-      const body = [
-        `Name: ${data.get('name')}`,
-        `Email: ${data.get('email')}`,
-        `Service location: ${data.get('location')}`,
-        `Service: ${data.get('service')}`,
-        '',
-        `Problem details:`,
-        data.get('message') || '(not provided)'
-      ].join('\n');
-
-      window.location.href =
-        `mailto:pestokillservicesindia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    });
   </script>
+<a class="whatsapp-float" href="https://wa.me/919910224202" target="_blank" rel="noopener" aria-label="Chat with Pestokill on WhatsApp">💬</a>
 </body>
 </html>

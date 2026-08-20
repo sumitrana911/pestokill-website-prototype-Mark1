@@ -1,26 +1,25 @@
 # Pestokill Services India — Static Website
 
-A responsive, dependency-free static website for Pestokill Services India Pvt Ltd.
+Responsive, dependency-free static website for Pestokill Services India Pvt Ltd.
 
-## Files
-- `index.html` — complete website
-- `assets/logo.svg` — supplied logo/icon artwork
-- `assets/icon.png` — supplied icon artwork
-- `assets/wordmark.png` — supplied wide wordmark
-- `assets/cover.jpg` — supplied cover artwork
+## Current features
+- Refined typography and lighter professional visual system
+- Delhi NCR-focused messaging
+- Direct WhatsApp CTA using +91 99102 24202
+- Phone and email contact links
+- Registered office address section
+- Expandable service explanations
+- CSS-created four-step process infographic
+- Responsive mobile navigation
+- SEO metadata, robots.txt and sitemap.xml
+- No backend or build step
 
 ## Deploy
-Upload the contents of this folder to any static host, including:
-- GitHub Pages
-- GoDaddy hosting
-- Netlify
-- Vercel
-- Cloudflare Pages
+Upload the contents of this folder to GitHub Pages or another static host.
 
-The site has no server-side dependencies or build step.
+## Contact data currently used
+- Phone / WhatsApp: +91 99102 24202
+- Email: pestokillservicesindia@gmail.com
+- Registered Office: House No. S-31C, Ground Floor, Pvt Colony, S. N. Puri, New Delhi, Delhi 110065
 
-## Quote form
-The quote form is intentionally backend-free. It opens the visitor's default email application and prepares an enquiry addressed to:
-pestokillservicesindia@gmail.com
-
-If you later want submissions stored in a dashboard, the form can be connected to a form service or backend.
+The registered-office address is based on public company records and should be confirmed by the business before treating it as a customer-facing service office address.
